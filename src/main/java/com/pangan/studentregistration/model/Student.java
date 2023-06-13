@@ -10,14 +10,18 @@ public class Student {
     private Long id;
     private String studentId;
     private String name;
+    private String middlename;
+    private String lastname;
     private String address;
     private String email;
     private String phoneNumber;
 
-    public Student(Long id, String studentId, String name, String address, String email, String phoneNumber) {
+    public Student(Long id, String studentId, String name, String middlename, String lastname, String address, String email, String phoneNumber) {
         this.id = id;
         this.studentId = studentId;
         this.name = name;
+        this.middlename = middlename;
+        this.lastname = lastname;
         this.address = address;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -41,6 +45,22 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getMiddlename() {
+        return middlename;
+    }
+
+    public void setMiddlename(String middlename) {
+        this.middlename = middlename;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getAddress() {
@@ -71,6 +91,8 @@ public class Student {
         return new StudentDto(
                 this.getStudentId(),
                 this.getName(),
+                this.getMiddlename(),
+                this.getLastname(),
                 this.getAddress(),
                 this.getEmail(),
                 this.getPhoneNumber()

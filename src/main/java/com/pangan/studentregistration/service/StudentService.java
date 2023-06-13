@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class StudentService {
@@ -21,13 +22,9 @@ public class StudentService {
 
     public List<StudentDto> getAllStudents() {
         List<Student> studentList = studentRepository.findAll();
-        List<StudentDto> studentDtoList = new ArrayList<>();
-        studentList.forEach(
-                student -> {
-                    StudentDto studentDto = student.toStudentDto();
-                    studentDtoList.add(studentDto);
-                });
-        return studentDtoList;
+        return studentList.stream()
+                    .map(Student::toStudentDto)
+                    .collect(Collectors.toList());
     }
 
     public StudentDto getStudentById(Long id) {
@@ -42,6 +39,8 @@ public class StudentService {
                 studentId,
                 studentDto.getStudentId(),
                 studentDto.getName(),
+                studentDto.getMiddlename(),
+                studentDto.getLastname(),
                 studentDto.getAddress(),
                 studentDto.getEmail(),
                 studentDto.getPhoneNumber()
