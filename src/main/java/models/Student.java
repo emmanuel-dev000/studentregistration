@@ -3,15 +3,15 @@ package models;
 import org.springframework.data.annotation.Transient;
 
 public class Student {
+    @Transient
+    public static final String STUDENT_SEQUENCE = "Student Sequence";
+
     private Long id;
     private String studentId;
     private String name;
     private String address;
     private String email;
     private String phoneNumber;
-
-    @Transient
-    public static final String STUDENT_SEQUENCE = "Student Sequence";
 
     public Student(Long id, String studentId, String name, String address, String email, String phoneNumber) {
         this.id = id;
