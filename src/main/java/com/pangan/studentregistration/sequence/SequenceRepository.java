@@ -1,4 +1,4 @@
-package sequence;
+package com.pangan.studentregistration.sequence;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

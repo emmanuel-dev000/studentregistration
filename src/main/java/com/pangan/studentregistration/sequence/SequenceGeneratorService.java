@@ -1,4 +1,4 @@
-package sequence;
+package com.pangan.studentregistration.sequence;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;

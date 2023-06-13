@@ -1,5 +1,6 @@
-package models;
+package com.pangan.studentregistration.model;
 
+import com.pangan.studentregistration.dto.StudentDto;
 import org.springframework.data.annotation.Transient;
 
 public class Student {
@@ -64,5 +65,15 @@ public class Student {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public StudentDto toStudentDto() {
+        return new StudentDto(
+                this.getStudentId(),
+                this.getName(),
+                this.getAddress(),
+                this.getEmail(),
+                this.getPhoneNumber()
+        );
     }
 }
