@@ -39,13 +39,13 @@ public class StudentService {
         long studentId = sequenceGeneratorService.generateSequence(Student.STUDENT_SEQUENCE);
         Student student = new Student(
                 studentId,
-                studentDto.getStudentId(),
-                studentDto.getName(),
-                studentDto.getMiddlename(),
-                studentDto.getLastname(),
-                studentDto.getAddress(),
-                studentDto.getEmail(),
-                studentDto.getPhoneNumber()
+                studentDto.studentId(),
+                studentDto.name(),
+                studentDto.middlename(),
+                studentDto.lastname(),
+                studentDto.address(),
+                studentDto.email(),
+                studentDto.phoneNumber()
         );
         studentRepository.save(student);
         return studentDto;
