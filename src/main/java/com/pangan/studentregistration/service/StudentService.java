@@ -71,4 +71,16 @@ public class StudentService {
         student.setMiddlename(studentMiddlename);
         return studentRepository.save(student).toStudentDto();
     }
+
+    public StudentDto updateStudentLastnameById(Long id, String studentLastname) {
+        Student student = studentRepository.findById(id).get();
+        student.setLastname(studentLastname);
+        return studentRepository.save(student).toStudentDto();
+    }
+
+    public StudentDto updateStudentAddressById(Long id, String studentAddress) {
+        Student student = studentRepository.findById(id).get();
+        student.setAddress(studentAddress);
+        return studentRepository.save(student).toStudentDto();
+    }
 }
