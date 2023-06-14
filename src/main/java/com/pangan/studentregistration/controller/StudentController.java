@@ -45,7 +45,7 @@ public class StudentController {
 
     @PatchMapping("/{id}/student-id")
     public ResponseEntity<StudentDto> updateStudentId(
-            @PathVariable("id") Long id, @RequestParam("studentId") String studentId) {
+            @PathVariable("id") Long id, @RequestParam("student-id") String studentId) {
         StudentDto studentDto = studentService.updateStudentIdById(id, studentId);
         return new ResponseEntity<>(studentDto, HttpStatus.OK);
     }
@@ -54,6 +54,13 @@ public class StudentController {
     public ResponseEntity<StudentDto> updateStudentName(
             @PathVariable("id") Long id, @RequestParam("name") String name) {
         StudentDto studentDto = studentService.updateStudentNameById(id, name);
+        return new ResponseEntity<>(studentDto, HttpStatus.OK);
+    }
+
+    @PatchMapping("/{id}/middle-name")
+    public ResponseEntity<StudentDto> updateStudentMiddlename(
+            @PathVariable("id") Long id, @RequestParam("middle-name") String middlename) {
+        StudentDto studentDto = studentService.updateStudentMiddlenameById(id, middlename);
         return new ResponseEntity<>(studentDto, HttpStatus.OK);
     }
 }
