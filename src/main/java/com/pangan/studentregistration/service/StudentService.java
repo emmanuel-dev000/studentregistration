@@ -7,6 +7,7 @@ import com.pangan.studentregistration.sequence.SequenceGeneratorService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -52,5 +53,11 @@ public class StudentService {
     public String deleteStudentById(Long id) {
         studentRepository.deleteById(id);
         return STUDENT_REMOVED_FROM_THE_DATABASE;
+    }
+
+    public StudentDto updateStudentIdById(Long id, String studentId) {
+        Student student = studentRepository.findById(id).get();
+        student.setStudentId(studentId);
+        return studentRepository.save(student).toStudentDto();
     }
 }

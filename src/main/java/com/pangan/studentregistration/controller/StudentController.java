@@ -42,4 +42,11 @@ public class StudentController {
         String message = studentService.deleteStudentById(id);
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<StudentDto> updateStudentId(
+            @PathVariable("id") Long id, @RequestParam("studentId") String studentId) {
+        StudentDto studentDto = studentService.updateStudentIdById(id, studentId);
+        return new ResponseEntity<>(studentDto, HttpStatus.OK);
+    }
 }
