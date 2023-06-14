@@ -43,10 +43,17 @@ public class StudentController {
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("/{id}/student-id")
     public ResponseEntity<StudentDto> updateStudentId(
             @PathVariable("id") Long id, @RequestParam("studentId") String studentId) {
         StudentDto studentDto = studentService.updateStudentIdById(id, studentId);
+        return new ResponseEntity<>(studentDto, HttpStatus.OK);
+    }
+
+    @PatchMapping("/{id}/name")
+    public ResponseEntity<StudentDto> updateStudentName(
+            @PathVariable("id") Long id, @RequestParam("name") String name) {
+        StudentDto studentDto = studentService.updateStudentNameById(id, name);
         return new ResponseEntity<>(studentDto, HttpStatus.OK);
     }
 }

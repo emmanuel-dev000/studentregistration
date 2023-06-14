@@ -60,4 +60,10 @@ public class StudentService {
         student.setStudentId(studentId);
         return studentRepository.save(student).toStudentDto();
     }
+
+    public StudentDto updateStudentNameById(Long id, String studentName) {
+        Student student = studentRepository.findById(id).get();
+        student.setName(studentName);
+        return studentRepository.save(student).toStudentDto();
+    }
 }
