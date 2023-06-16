@@ -8,12 +8,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class StudentRegistrationApplication {
 
 	public static void main(String[] args) {
-
-		ConfigurableApplicationContext ctx = SpringApplication.run(StudentRegistrationApplication.class, args);
-		System.out.println(StudentRegistrationApplication.class);
-//		for (String beanName : ctx.getBeanDefinitionNames()) {
-//			System.out.println(beanName);
-//		}
+		SpringApplication.run(StudentRegistrationApplication.class, args);
 	}
 
 }
