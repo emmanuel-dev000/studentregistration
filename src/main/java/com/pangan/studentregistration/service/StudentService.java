@@ -54,6 +54,18 @@ public class StudentService {
         return STUDENT_REMOVED_FROM_THE_DATABASE;
     }
 
+    public StudentDto updateStudent(Long id, StudentDto studentDto) {
+        Student student = studentRepository.findById(id).get();
+        student.setStudentId(studentDto.studentId());
+        student.setName(studentDto.name());
+        student.setMiddlename(studentDto.middlename());
+        student.setLastname(studentDto.lastname());
+        student.setAddress(studentDto.address());
+        student.setEmail(studentDto.email());
+        student.setPhoneNumber(studentDto.phoneNumber());
+        return studentRepository.save(student).toStudentDto();
+    }
+
     public StudentDto updateStudentIdById(Long id, String studentId) {
         Student student = studentRepository.findById(id).get();
         student.setStudentId(studentId);

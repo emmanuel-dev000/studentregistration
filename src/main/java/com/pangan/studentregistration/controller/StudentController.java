@@ -44,6 +44,13 @@ public class StudentController {
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
 
+    @PatchMapping("/{id}")
+    public ResponseEntity<StudentDto> updateStudentId(
+            @PathVariable("id") Long id, @RequestBody StudentDto student) {
+        StudentDto studentDto = studentService.updateStudent(id, student);
+        return new ResponseEntity<>(studentDto, HttpStatus.OK);
+    }
+
     @PatchMapping("/{id}/student-id")
     public ResponseEntity<StudentDto> updateStudentId(
             @PathVariable("id") Long id, @RequestParam("student-id") String studentId) {
