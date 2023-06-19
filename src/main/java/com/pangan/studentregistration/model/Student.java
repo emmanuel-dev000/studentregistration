@@ -89,6 +89,7 @@ public class Student {
 
     public StudentDto toStudentDto() {
         return new StudentDto(
+                this.getId(),
                 this.getStudentId(),
                 this.getName(),
                 this.getMiddlename(),

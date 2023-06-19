@@ -56,13 +56,35 @@ public class StudentService {
 
     public StudentDto updateStudent(Long id, StudentDto studentDto) {
         Student student = studentRepository.findById(id).get();
-        student.setStudentId(studentDto.studentId());
-        student.setName(studentDto.name());
-        student.setMiddlename(studentDto.middlename());
-        student.setLastname(studentDto.lastname());
-        student.setAddress(studentDto.address());
-        student.setEmail(studentDto.email());
-        student.setPhoneNumber(studentDto.phoneNumber());
+
+        if (!student.getStudentId().equals(studentDto.studentId())) {
+            student.setStudentId(studentDto.studentId());
+        }
+
+        if (!student.getName().equals(studentDto.name())) {
+            student.setName(studentDto.name());
+        }
+
+        if (!student.getMiddlename().equals(studentDto.middlename())) {
+            student.setMiddlename(studentDto.middlename());
+        }
+
+        if (!student.getLastname().equals(studentDto.lastname())) {
+            student.setLastname(studentDto.lastname());
+        }
+
+        if (!student.getAddress().equals(studentDto.address())) {
+            student.setAddress(studentDto.address());
+        }
+
+        if (!student.getEmail().equals(studentDto.email())) {
+            student.setEmail(studentDto.email());
+        }
+
+        if (!student.getPhoneNumber().equals(studentDto.phoneNumber())) {
+            student.setPhoneNumber(studentDto.phoneNumber());
+        }
+
         return studentRepository.save(student).toStudentDto();
     }
 
