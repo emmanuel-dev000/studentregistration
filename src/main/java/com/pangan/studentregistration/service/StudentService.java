@@ -36,7 +36,7 @@ public class StudentService {
     }
 
     public StudentDto createStudentByStudentDto(StudentDto studentDto) {
-        long studentId = sequenceGeneratorService.generateSequence(Student.STUDENT_SEQUENCE);
+        long studentId = 1L;
         Student student = new Student(
                 studentId,
                 studentDto.studentId(),
