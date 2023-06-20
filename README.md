@@ -27,6 +27,7 @@ Viewing students in a list
 ![Viewing students in a list](https://github.com/emmanuel-dev000/studentregistration/blob/master/docs/students%20list.png)
 
 Editing student's info
+
 ![Editing student's info](https://github.com/emmanuel-dev000/studentregistration/blob/master/docs/edit%20student.png)
 
 Header
