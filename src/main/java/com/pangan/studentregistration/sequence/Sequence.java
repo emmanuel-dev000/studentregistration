@@ -1,9 +1,10 @@
 package com.pangan.studentregistration.sequence;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 public class Sequence {
-    @Id
+    @MongoId
     private String id;
     private Long sequence;
 
