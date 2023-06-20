@@ -6,6 +6,10 @@ Simple, easy-to-use, and straightforward management app
 
 This is the first part of Spring Boot journey
 
+Made by Emmanuel Pangan entirely from scratch within a week
+
+Demo at: TBD
+
 Features:
 - Registering new student
 - Viewing students in a list
@@ -26,10 +30,12 @@ Registering new student
 Viewing students in a list
 ![Viewing students in a list](https://github.com/emmanuel-dev000/studentregistration/blob/master/docs/students%20list.png)
 
+Editing student's info
+
+![Editing student's info](https://github.com/emmanuel-dev000/studentregistration/blob/master/docs/edit%20student.png)
+
 Header
 ![Header](https://github.com/emmanuel-dev000/studentregistration/blob/master/docs/header.png)
 
 Footer
 ![Footer](https://github.com/emmanuel-dev000/studentregistration/blob/master/docs/footer.png)
-
-Made by Emmanuel Pangan entirely from scratch within a week
