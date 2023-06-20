@@ -18,13 +18,12 @@ public class SequenceGeneratorService {
     public static final int AUTO_INCREMENT_BY_1 = 1;
     public static final long DEFAULT_ID = 1L;
 
-    @Autowired
-    private MongoOperations mongoOperations;
+    private final MongoOperations mongoOperations;
 
-//    @Autowired
-//    public SequenceGeneratorService(MongoOperations mongoOperations) {
-//        this.mongoOperations = mongoOperations;
-//    }
+    @Autowired
+    public SequenceGeneratorService(MongoOperations mongoOperations) {
+        this.mongoOperations = mongoOperations;
+    }
 
     public long generateSequence(String sequenceId) {
         Query query = new Query(Criteria.where(ID).is(sequenceId));

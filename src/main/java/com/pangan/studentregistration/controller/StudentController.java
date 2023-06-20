@@ -13,13 +13,12 @@ import java.util.List;
 @CrossOrigin
 @RequestMapping("/api/v1/students")
 public class StudentController {
-    @Autowired
-    private StudentService studentService;
+    private final StudentService studentService;
 
-//    @Autowired
-//    public StudentController(StudentService studentService) {
-//        this.studentService = studentService;
-//    }
+    @Autowired
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
 
     @GetMapping
     public ResponseEntity<List<StudentDto>> getAllStudents() {
