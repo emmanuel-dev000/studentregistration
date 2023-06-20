@@ -4,6 +4,7 @@ import com.pangan.studentregistration.dto.StudentDto;
 import com.pangan.studentregistration.model.Student;
 import com.pangan.studentregistration.repository.StudentRepository;
 import com.pangan.studentregistration.sequence.SequenceGeneratorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class StudentService {
     private final StudentRepository studentRepository;
     private final SequenceGeneratorService sequenceGeneratorService;
 
+    @Autowired
     public StudentService(StudentRepository studentRepository, SequenceGeneratorService sequenceGeneratorService) {
         this.studentRepository = studentRepository;
         this.sequenceGeneratorService = sequenceGeneratorService;
