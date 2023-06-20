@@ -13,9 +13,9 @@ import org.springframework.stereotype.Service;
 import java.util.Objects;
 
 import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
-
-@DependsOn("mongoTemplate")
-@Service
+//
+//@DependsOn("mongoTemplate")
+//@Service
 public class SequenceGeneratorService {
     public static final String ID = "id";
     public static final String SEQUENCE = "sequence";
@@ -24,7 +24,7 @@ public class SequenceGeneratorService {
 
     private final MongoOperations mongoOperations;
 
-    @Autowired
+//    @Autowired
     public SequenceGeneratorService(MongoOperations mongoOperations) {
         this.mongoOperations = mongoOperations;
     }
