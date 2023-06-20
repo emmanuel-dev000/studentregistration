@@ -1,12 +1,14 @@
 package com.pangan.studentregistration.model;
 
 import com.pangan.studentregistration.dto.StudentDto;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 
 public class Student {
     @Transient
     public static final String STUDENT_SEQUENCE = "Student Sequence";
 
+    @Id
     private Long id;
     private String studentId;
     private String name;
