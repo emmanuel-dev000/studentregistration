@@ -19,6 +19,17 @@ Stacks:
 - React MUI
 
 Screenshots:
-TBD
+
+Registering new student
+![Registering new student](https://github.com/emmanuel-dev000/studentregistration/blob/master/docs/add%20new%20student.PNG)
+
+Viewing students in a list
+![Viewing students in a list](https://github.com/emmanuel-dev000/studentregistration/blob/master/docs/students%20list.png)
+
+Header
+![Header](https://github.com/emmanuel-dev000/studentregistration/blob/master/docs/header.png)
+
+Footer
+![Footer](https://github.com/emmanuel-dev000/studentregistration/blob/master/docs/footer.png)
 
 Made by Emmanuel Pangan entirely from scratch within a week
