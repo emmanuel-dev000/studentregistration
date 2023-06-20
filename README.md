@@ -6,6 +6,8 @@ Simple, easy-to-use, and straightforward management app
 
 This is the first part of Spring Boot journey
 
+Made by Emmanuel Pangan entirely from scratch within a week
+
 Demo at: TBD
 
 Features:
@@ -37,5 +39,3 @@ Header
 
 Footer
 ![Footer](https://github.com/emmanuel-dev000/studentregistration/blob/master/docs/footer.png)
-
-Made by Emmanuel Pangan entirely from scratch within a week
