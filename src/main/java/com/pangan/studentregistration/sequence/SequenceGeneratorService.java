@@ -3,6 +3,7 @@ package com.pangan.studentregistration.sequence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -13,20 +14,25 @@ import java.util.Objects;
 
 import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
 
-@Configuration
+@DependsOn("mongoTemplate")
+@Service
 public class SequenceGeneratorService {
     public static final String ID = "id";
     public static final String SEQUENCE = "sequence";
     public static final int AUTO_INCREMENT_BY_1 = 1;
     public static final long DEFAULT_ID = 1L;
 
+    private final MongoOperations mongoOperations;
+
     @Autowired
-    private MongoOperations mongoOperations;
+    public SequenceGeneratorService(MongoOperations mongoOperations) {
+        this.mongoOperations = mongoOperations;
+    }
 
     public long generateSequence(String sequenceId) {
         Query query = new Query(Criteria.where(ID).is(sequenceId));
         Update update = new Update();
-        update.inc(SEQUENCE, 1);
+        update.inc(SEQUENCE, AUTO_INCREMENT_BY_1);
         Sequence sequence = mongoOperations.findAndModify(
                 query,
                 update,
@@ -34,6 +40,6 @@ public class SequenceGeneratorService {
                 Sequence.class
         );
 
-        return Objects.isNull(sequence) ? 1L : sequence.getSequence();
+        return Objects.isNull(sequence) ? DEFAULT_ID : sequence.getSequence();
     }
 }
