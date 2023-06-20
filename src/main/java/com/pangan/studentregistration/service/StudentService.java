@@ -13,14 +13,17 @@ import java.util.stream.Collectors;
 @Service
 public class StudentService {
     public static final String STUDENT_REMOVED_FROM_THE_DATABASE = "Student removed from the database";
-    private final StudentRepository studentRepository;
-    private final SequenceGeneratorService sequenceGeneratorService;
 
     @Autowired
-    public StudentService(StudentRepository studentRepository, SequenceGeneratorService sequenceGeneratorService) {
-        this.studentRepository = studentRepository;
-        this.sequenceGeneratorService = sequenceGeneratorService;
-    }
+    private SequenceGeneratorService sequenceGeneratorService;
+    @Autowired
+    private StudentRepository studentRepository;
+
+//    @Autowired
+//    public StudentService(StudentRepository studentRepository, SequenceGeneratorService sequenceGeneratorService) {
+//        this.studentRepository = studentRepository;
+//        this.sequenceGeneratorService = sequenceGeneratorService;
+//    }
 
     public List<StudentDto> getAllStudents() {
         List<Student> studentList = studentRepository.findAll();
