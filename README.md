@@ -6,6 +6,8 @@ Simple, easy-to-use, and straightforward management app
 
 This is the first part of Spring Boot journey
 
+Demo at: TBD
+
 Features:
 - Registering new student
 - Viewing students in a list
