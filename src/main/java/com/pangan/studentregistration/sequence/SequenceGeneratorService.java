@@ -1,6 +1,8 @@
 package com.pangan.studentregistration.sequence;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -11,7 +13,7 @@ import java.util.Objects;
 
 import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
 
-@Service
+@Configuration
 public class SequenceGeneratorService {
     public static final String ID = "id";
     public static final String SEQUENCE = "sequence";
@@ -28,7 +30,7 @@ public class SequenceGeneratorService {
     public long generateSequence(String sequenceId) {
         Query query = new Query(Criteria.where(ID).is(sequenceId));
         Update update = new Update();
-        update.inc(SEQUENCE, AUTO_INCREMENT_BY_1);
+        update.inc(SEQUENCE, 1);
         Sequence sequence = mongoOperations.findAndModify(
                 query,
                 update,
@@ -36,6 +38,6 @@ public class SequenceGeneratorService {
                 Sequence.class
         );
 
-        return Objects.isNull(sequence) ? DEFAULT_ID : sequence.getSequence();
+        return Objects.isNull(sequence) ? 1L : sequence.getSequence();
     }
 }
