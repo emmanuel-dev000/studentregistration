@@ -8,7 +8,7 @@ This is the first part of Spring Boot journey
 
 Made by Emmanuel Pangan entirely from scratch within a week
 
-Demo at: TBD
+React Frontend Source Code: [https://github.com/emmanuel-dev000/studentregistrationreact](https://github.com/emmanuel-dev000/studentregistrationreact)
 
 Features:
 - Registering new student
